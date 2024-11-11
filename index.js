@@ -5,7 +5,9 @@ const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
 // Routes externe
-const checkoutRoutes = require('./checkout');
+const routerCheckout = require('./checkout');
+const routerPanier = require('./panier');
+const routerProducts = require('./products');
 
 // Variable d'environnement
 dotenv.config();
@@ -19,7 +21,8 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 
 // Middleware
-app.use('/', checkoutRoutes)
+app.use('/', routerProducts, routerPanier, routerCheckout)
+// app.use('/checkout', routerCheckout)
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -33,4 +36,13 @@ app.get('/', (req, res) => {
 app.listen(port, async () => {
     await mongoose.connect(databaseUrl)
     console.log(`Le serveur tourne sur le port ${port} et est connecté à la base de données.`);
+})
+
+// Page d'erreur
+app.get('/error404', (req, res) => {
+    res.send('Page introuvable 404.')
+})
+
+app.get('/error500', (req, res) => {
+    res.send('Page introuvable 500.')
 })
