@@ -3,7 +3,7 @@ const routerPanier = express.Router();
 
 routerPanier.get('/panier', async (req, res) => {
     try {
-        res.send('Votre panier.')
+        res.render('panier')
     } catch (error) {
         console.error(error)
     }
