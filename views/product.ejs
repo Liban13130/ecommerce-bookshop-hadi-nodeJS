@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css" integrity="sha512-9xKTRVabjVeZmc+GUW8GgSmcREDunMM+Dt/GrzchfN8tkwHizc5RP4Ok/MXFFy5rIjJjzhndFScTceq5e6GvVQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/1.0.2/css/bulma.min.css" integrity="sha512-RpeJZX3aH5oZN3U3JhE7Sd+HG8XQsqmP3clIbu4G28p668yNsRNj3zMASKe1ATjl/W80wuEtCx2dFA8xaebG5w==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="/css/product.css">
+    <title>Nos Livres</title>
+</head>
+<body>
+  <!-- NAVBAR -->
+    <div class="container">
+      <div class="navbar">
+        <div class="left">
+          <img src="/images/spencer_logo.png" alt="">
+        </div>
+        <div class="right">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </div>
+      </div>
+    </div>
+    <!-- PAGE PRODUITS -->
+    <h1 class="title">Nos Livres</h1>
+    <div class="card-container">
+      <% products.forEach(product => { %>
+       <div class="card">
+         <div class="top">
+           <img src="<%= product.image %>" alt="">
+      </div>
+      <div class="bottom">
+        <h1> <%= product.name %> </h1>
+        <p>$<%= product.price %></p>
+        <p><%= product.description %></p>
+        <button>Ajouter au panier</button>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(39, 39, 39);
+}
+
+
+/* NAVBAR */
+.container{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 30px 0 30px;
+    background-color: white;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right i{
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.left{
+    cursor: pointer;
+}
+
+/* NAVBAR RESPONSIVE */
+
+@media (max-width: 768px) {
+    .left img {
+      height: 40px; /* Réduit la taille du logo */
+    }
+
+    .right i {
+      font-size: 30px; /* Réduit la taille du logo */
+    }
+  }
+
+
+/* PAGE PRODUITS */
+.card-container{
+  display: flex;
+  margin: 0 50px;
+}
+
+h1.title{
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  box-shadow: rgba(148, 147, 147, 0.814) 0px 5px 15px;
+  margin: 0 50px;
+}
+
+
+.card .top img{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+
+.card .bottom{
+  padding: 0 20px;
+}
+
+.card .bottom h1{
+  color: white;
+  font-size: 21px;
+}
+
+.card .bottom p{
+  color: rgb(151, 150, 150);
+}
+
+.card button{
+  min-width: 150px;
+  padding: 11px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.card button:hover{
+  transform: scale(0.98);
+}
